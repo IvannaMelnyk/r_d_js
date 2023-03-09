@@ -106,3 +106,60 @@ console.log("Sum:", calculateSum(arr));
 console.log("Divide:", divideNumbers(arr));
 console.log("Subtract:", subtractNumbers(arr));
 console.log("Multiplicate:", multiplicateNumbers(arr));
+
+//
+function findSmallestNumber(arr) {
+  if (arr.length === 0) {
+    console.log("Empty array");
+    return undefined;
+  }
+
+  let min = arr[0];
+
+  for (let i = 1; i < arr.length; i++) {
+    if (typeof arr[i] !== "number" || isNaN(arr[i])) {
+      console.log(`Element with index ${i} is not a number.`);
+      continue;
+    }
+    if (arr[i] < min) {
+      min = arr[i];
+    }
+  }
+  if (min === Number.MAX_VALUE) {
+    console.log("Array doesn't consist of numbers.");
+    return undefined;
+  }
+
+  return min;
+}
+
+function findBiggestNumber(arr) {
+  if (arr.length === 0) {
+    console.log("Empty array");
+    return undefined;
+  }
+
+  let max = arr[0];
+
+  for (let i = 1; i < arr.length; i++) {
+    if (typeof arr[i] !== "number" || isNaN(arr[i])) {
+      console.log(`Element with index ${i} is not a number.`);
+      continue;
+    }
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+  if (min === Number.MIN_VALUE) {
+    console.log("Array doesn't consist of numbers.");
+    return undefined;
+  }
+
+  return max;
+}
+
+const numbers = [3, 678, 56, 87, 90, 300, 56, "orange", 790, 12, 6, "1200"];
+const min = findSmallestNumber(numbers);
+const max = findBiggestNumber(numbers);
+console.log("Smallest Number: ", min);
+console.log("Biggest Number: ", max);
